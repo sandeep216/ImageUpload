@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DimensionRatio" >
+        <attr name="ratio_width" format="integer" />
+        <attr name="ratio_height" format="integer" />
+        <attr name="calculation_type" format="enum" >
+            <enum name="none" value="0" />
+            <enum name="height" value="1" />
+            <enum name="width" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>

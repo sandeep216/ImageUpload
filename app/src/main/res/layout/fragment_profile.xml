@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ImageView
+            android:id="@+id/iv_user_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"/>
+
+    <TextView android:id="@+id/tv_name"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Hi, User"
+              android:textSize="22sp"
+              android:layout_marginTop="@dimen/dimen_15dp"
+              android:layout_below="@id/iv_user_image"
+              android:layout_centerInParent="true"/>
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/tv_email"
+              android:layout_centerInParent="true"
+              android:layout_below="@id/tv_name"
+              android:layout_marginTop="@dimen/dimen_10dp"
+              android:gravity="center"/>
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:id="@+id/tv_lable_signed_in"
+              android:text="You have successfully signed in"
+              android:layout_centerInParent="true"
+              android:layout_below="@id/tv_email"
+              android:layout_marginTop="@dimen/dimen_15dp"
+              android:gravity="center"/>
+
+</RelativeLayout>

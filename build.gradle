@@ -1,0 +1,43 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.2.71'
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.google.gms:google-services:4.0.1'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext{
+    designSupport = '27.1.1'
+    glide = '4.8.0'
+    firebaseDatabase = '16.0.3'
+    firebaseStorage = '16.0.3'
+    firebaseAuth = '16.0.5'
+    firebaseMessaging = '17.3.4'
+    retrofit = '2.4.0'
+    facebook = '4.37.0'
+    playServiceAuth = '16.0.1'
+    gsonSupport = '2.8.5'
+    multiDex = '1.0.3'
+    hyperIon = '0.9.23'
+}

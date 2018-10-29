@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ImageUpload</string>
+    <string name="facebook_app_id">Facebook App Id</string>
+    <string name="fb_login_protocol_scheme">Facebook protocol scheme</string>
+    <string name="privacy_policy">By signing up you agree to our Terms of service and Privacy Policy</string>
+    <string name="default_notification_channel_id">Comment</string>
+</resources>

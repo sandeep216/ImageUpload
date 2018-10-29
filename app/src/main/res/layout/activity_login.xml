@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <ImageView android:id="@+id/iv_app_name"
+               android:layout_width="wrap_content"
+               android:layout_height="50dp"
+               android:layout_marginTop="70dp"
+               android:src="@drawable/upload"/>
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/app_name"
+              android:textSize="30sp"
+              android:textAllCaps="true"
+              android:layout_marginTop="@dimen/dimen_15dp"
+              android:textStyle="bold"
+              android:layout_below="@id/iv_app_name"
+              android:textColor="@color/black"
+              android:layout_centerHorizontal="true"
+              android:gravity="center"
+    />
+
+    <RelativeLayout
+            android:id="@+id/rl_social"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_15dp"
+            android:layout_centerInParent="true"
+            android:layout_below="@id/tv_app_name"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+        <ImageView
+                android:id="@+id/iv_facebook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/bottom_nav_height"
+                android:src="@drawable/ic_facebook"/>
+
+        <ImageView android:id="@+id/iv_or"
+                   android:layout_width="match_parent"
+                   android:layout_height="50dp"
+                   android:src="@drawable/ic_or_image"
+                   android:layout_centerHorizontal="true"
+                   android:layout_marginTop="@dimen/dimen_15dp"
+                   android:layout_below="@id/iv_facebook"/>
+
+
+        <ImageView
+                android:id="@+id/iv_google"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_15dp"
+                android:layout_centerInParent="true"
+                android:layout_below="@id/iv_or"
+                android:layout_marginEnd="@dimen/dimen_10dp"
+                android:src="@drawable/ic_google"/>
+
+    </RelativeLayout>
+
+    <TextView android:id="@+id/tv_privacy_policy"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_centerHorizontal="true"
+              android:layout_marginEnd="@dimen/dimen_15dp"
+              android:layout_marginRight="@dimen/dimen_15dp"
+              android:layout_marginLeft="@dimen/dimen_15dp"
+              android:layout_marginStart="@dimen/dimen_15dp"
+              android:textColor="@color/colorPrimary"
+              android:layout_below="@id/rl_social"
+              android:layout_marginTop="@dimen/dimen_35dp"
+              android:gravity="center"
+              android:textSize="14sp"
+              android:text="@string/privacy_policy"/>
+
+    <include android:id="@+id/loader"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:visibility="gone"
+             layout="@layout/loader_layout"/>
+</RelativeLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dimen_5dp"
+                android:layout_marginTop="@dimen/dimen_10dp">
+
+    <LinearLayout android:id="@+id/ll_comment"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:layout_marginStart="@dimen/dimen_10dp"
+                  android:weightSum="2">
+
+        <TextView android:id="@+id/tv_send_by"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:textColor="@color/colorPrimary"
+                  android:textStyle="bold"
+                  android:gravity="center_vertical"
+                  android:text="Hello"
+                  android:textSize="22sp"
+                  android:layout_weight="1"/>
+
+        <TextView android:id="@+id/tv_send_at"
+                  android:layout_width="0dp"
+                  android:textSize="15sp"
+                  android:gravity="center_vertical"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/tv_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_10dp"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:textSize="15sp"
+            android:maxLines="3"
+            android:layout_below="@id/ll_comment"/>
+
+</RelativeLayout>
