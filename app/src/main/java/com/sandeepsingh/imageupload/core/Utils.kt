@@ -6,8 +6,14 @@ import android.R.attr.x
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
 import android.os.Build
+import com.google.gson.GsonBuilder
+import okhttp3.OkHttpClient
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import java.lang.Exception
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.concurrent.TimeUnit
 
 
 /**
@@ -77,6 +83,34 @@ class Utils{
                 }
             }
             return haveConnectedWifi || haveConnectedMobile
+        }
+
+        fun getRetrofitInstance(url :String): Retrofit {
+            val _gson = GsonBuilder()
+                .setDateFormat(BaseActivity.DATE_FORMAT)
+                .create()
+
+            val httpClient = OkHttpClient.Builder()
+            httpClient.addInterceptor { chain ->
+                var authKey: String
+                try {
+                    authKey = "key=" + NotificationContants.AUTHKEY
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                    authKey = ""
+                }
+
+                val request = chain.request().newBuilder().addHeader(BaseActivity.AUTHORIZATION, authKey).build()
+                val response = chain.proceed(request)
+
+                response
+            }.connectTimeout(60, TimeUnit.SECONDS).readTimeout(60, TimeUnit.SECONDS)
+            val _builder = Retrofit.Builder()
+                .baseUrl(url)
+                .addConverterFactory(GsonConverterFactory.create(_gson))
+
+            val client = httpClient.build()
+            return _builder.client(client).build()
         }
     }
 

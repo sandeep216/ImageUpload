@@ -37,6 +37,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
 
     implementation "com.github.bumptech.glide:glide:$rootProject.glide"
     annotationProcessor "com.github.bumptech.glide:compiler:$rootProject.glide"
@@ -60,5 +61,12 @@ dependencies {
 
     debugImplementation "com.willowtreeapps.hyperion:hyperion-core:$rootProject.hyperIon"
     debugImplementation "com.willowtreeapps.hyperion:hyperion-crash:$rootProject.hyperIon"
+
+    testImplementation "com.nhaarman:mockito-kotlin:$kotlinMockito"
+    testImplementation "org.mockito:mockito-inline:$mockito"
+
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:3.0.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
 
 }

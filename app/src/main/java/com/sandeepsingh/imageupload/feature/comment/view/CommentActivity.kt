@@ -69,6 +69,7 @@ class CommentActivity : BaseActivity(), IComment.PresenterToView {
 
     fun retrieveBundle(){
         imageData = intent.extras!!.getSerializable(IMAGE_DATA) as Image
+//        imageData = "-LPtjEn9kobRIwhX-sVT"
     }
 
     fun initComponents(){
@@ -150,5 +151,9 @@ class CommentActivity : BaseActivity(), IComment.PresenterToView {
     override fun sendNotification(userToken: String) {
         val userName = Prefs.getString(this,UserConstants.KEY_USER_NAME,"")
         sendPushNotification(userToken,"$userName have commented on your post")
+    }
+
+    override fun isDatabaseError(b: Boolean) {
+
     }
 }

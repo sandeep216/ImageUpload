@@ -25,11 +25,13 @@ interface IComment {
         fun notifyDataChanged(commentArray : ArrayList<Serializable>)
         fun getImage(): Image
         fun sendNotification(userToken: String)
+        fun isDatabaseError(b: Boolean)
     }
 
     interface PresenterToView : IContext{
         fun notifyDataChanged(commentArray : ArrayList<Serializable>)
         fun getImage(): Image
         fun sendNotification(userToken: String)
+        fun isDatabaseError(b: Boolean)
     }
 }

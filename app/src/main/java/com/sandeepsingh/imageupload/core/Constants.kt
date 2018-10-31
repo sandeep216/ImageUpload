@@ -11,7 +11,7 @@ open class LoginConstants{
         val PROVIDER_FACEBOOK = 0x0FEE01
         val P_FACEBOOK = "facebook"
         val P_GOOGLE = "google"
-        val GOOGLE_WEBCLIENT_ID = "Your web client id"
+        val GOOGLE_WEBCLIENT_ID = "Your google web client id"
     }
 }
 
@@ -29,6 +29,7 @@ open class NotificationContants{
     companion object {
         val FIREBASE_PUSH_API_URL = "https://fcm.googleapis.com/"
         val FIREBASE_TOKEN = "firebase_token"
-        val AUTHKEY = "firebase server key"
+        val AUTHKEY = "Your Auth Key"
+        val FIREBASE_URL = "https://imageupload-f8565.firebaseio.com/"
     }
 }

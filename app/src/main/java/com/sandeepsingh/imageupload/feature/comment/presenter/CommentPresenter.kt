@@ -13,6 +13,10 @@ import java.io.Serializable
  * Created by Sandeep on 10/24/18.
  */
 class CommentPresenter(view : IComment.PresenterToView) : BasePresenter<IComment.PresenterToView>(view),IComment.ViewToPresenter,IComment.ModelToPresenter {
+    override fun isDatabaseError(b: Boolean) {
+        getView()!!.isDatabaseError(b)
+    }
+
     override fun getAppContext(): Context {
         return getView()!!.getAppContext()
     }

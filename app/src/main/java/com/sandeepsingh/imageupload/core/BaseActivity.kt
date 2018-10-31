@@ -45,7 +45,7 @@ abstract class BaseActivity : AppCompatActivity() {
 
     fun sendPushNotification(userToken: String, message: String) {
         try {
-            val iRetrofitCalls = getRetrofitInstance().create(IRetrofitCalls::class.java)
+            val iRetrofitCalls = Utils.getRetrofitInstance(NotificationContants.FIREBASE_PUSH_API_URL).create(IRetrofitCalls::class.java)
             val call = iRetrofitCalls.pushNotification(createNotificationData(userToken, message))
             val callback = object : Callback<JsonElement>{
                 override fun onFailure(call: Call<JsonElement>, t: Throwable) {
@@ -70,33 +70,5 @@ abstract class BaseActivity : AppCompatActivity() {
         notificationJson.add("notification",notificationData)
         notificationJson.add("to",JsonPrimitive(userToken))
         return notificationJson
-    }
-
-    fun getRetrofitInstance(): Retrofit {
-        val _gson = GsonBuilder()
-            .setDateFormat(DATE_FORMAT)
-            .create()
-
-        val httpClient = OkHttpClient.Builder()
-        httpClient.addInterceptor { chain ->
-            var authKey: String
-            try {
-                authKey = "key=" + NotificationContants.AUTHKEY
-            } catch (e: Exception) {
-                e.printStackTrace()
-                authKey = ""
-            }
-
-            val request = chain.request().newBuilder().addHeader(AUTHORIZATION, authKey).build()
-            val response = chain.proceed(request)
-
-            response
-        }.connectTimeout(60, TimeUnit.SECONDS).readTimeout(60, TimeUnit.SECONDS)
-        val _builder = Retrofit.Builder()
-            .baseUrl(NotificationContants.FIREBASE_PUSH_API_URL)
-            .addConverterFactory(GsonConverterFactory.create(_gson))
-
-        val client = httpClient.build()
-        return _builder.client(client).build()
     }
 }
